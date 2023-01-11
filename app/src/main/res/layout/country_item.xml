@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="country"
+            type="com.tugcearas.learncountriesapp.data.model.CountryModel" />
+        <variable
+            name="clickListener"
+            type="com.tugcearas.learncountriesapp.ui.adapter.CountryClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:orientation="horizontal"
+        android:background="@color/country_color"
+        android:layout_margin="8dp"
+        android:onClick="@{clickListener::countryClick}">
+
+        <!-- get id -->
+        <TextView
+            android:id="@+id/countryId_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@{String.valueOf(country.id)}"/>
+
+        <ImageView
+            android:id="@+id/countryItemImageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:padding="4dp"
+            android:downloadImage="@{country.flagUrl}"
+            >
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/countryItemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{country.countryName}"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:padding="4dp"/>
+
+            <TextView
+                android:id="@+id/countryItemRegion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{country.countryRegion}"
+                android:textSize="16sp"
+                android:textColor="@color/text_color"
+                android:padding="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</layout>

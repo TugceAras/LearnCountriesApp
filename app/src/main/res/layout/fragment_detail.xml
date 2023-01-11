@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="detailCountry"
+            type="com.tugcearas.learncountriesapp.data.model.CountryModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.DetailFragment"
+        >
+
+        <ImageView
+            android:id="@+id/countryDetailImage"
+            android:layout_width="280dp"
+            android:layout_height="180dp"
+            android:minHeight="150dp"
+            android:scaleType="fitCenter"
+            android:downloadImage="@{detailCountry.flagUrl}"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintBottom_toTopOf="@+id/countryDetailName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/countryDetailName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="@{detailCountry.countryName}"
+            android:textSize="36sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/countryDetailCapital"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/countryDetailCapital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@{`Capital : `+detailCountry.countryCapital}"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/countryDetailRegion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/countryDetailRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@{`Region : `+detailCountry.countryRegion}"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            android:textAlignment="textStart"
+            app:layout_constraintBottom_toTopOf="@+id/countryDetailCurrency"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/countryDetailCurrency"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Currency : `+detailCountry.countryCurrency}"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/countryDetailRegion"
+            app:layout_constraintBottom_toBottomOf="@id/countryDetailLanguage"
+            tools:layout_editor_absoluteY="405dp" />
+
+        <TextView
+            android:id="@+id/countryDetailLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{`Language : `+detailCountry.countryLanguage}"
+            android:textSize="20sp"
+            android:textColor="@color/text_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countryDetailCurrency"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
