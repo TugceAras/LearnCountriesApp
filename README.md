@@ -11,13 +11,13 @@
 <!-- Technologies -->
 ## 👇 Used Technologies
 #### - Navigation
-#### - ViewModel
 #### - Retrofit
 #### - Room
 #### - Databinding
 #### - RxJava
 #### - Glide
 #### - Coroutine
+(MVVM architecture is used)
 
 <!-- Dependencies -->
 ## :pencil2: Dependency
