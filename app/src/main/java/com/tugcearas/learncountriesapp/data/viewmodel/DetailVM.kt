@@ -9,6 +9,6 @@ class DetailVM: ViewModel() {
     val detailRepo = DetailRepo()
 
     fun getData(context: Context, id:Int){
-        detailRepo.getDatafromRoom(context,id)
+        detailRepo.getDataFromRoom(context,id)
     }
 }

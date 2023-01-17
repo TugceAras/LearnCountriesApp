@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 class DetailRepo:BaseRepo() {
     val countryDetailData = MutableLiveData<CountryModel>()
 
-    fun getDatafromRoom(context: Context, id:Int){
+    fun getDataFromRoom(context: Context, id:Int){
         launch {
             val dao = CountryDb(context).countryDao()
             val getCountry = dao.getCountry(id)
