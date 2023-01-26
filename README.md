@@ -72,7 +72,7 @@ buildFeatures {
      dataBinding true
  }
 ```
-project build.gradle
+project build.gradle:
 
 ```
 id 'androidx.navigation.safeargs' version '2.5.3' apply false
