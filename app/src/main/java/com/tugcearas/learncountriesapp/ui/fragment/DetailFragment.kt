@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.tugcearas.learncountriesapp.R
 import com.tugcearas.learncountriesapp.data.viewmodel.DetailVM
 import com.tugcearas.learncountriesapp.databinding.FragmentDetailBinding
@@ -21,7 +22,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_detail,container,false)
         return binding.root
     }
